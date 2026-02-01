@@ -1,4 +1,4 @@
-const { db } = require("./src/firebase/firebase.config"); // tu configuración de Firebase
+const { db } = require("./src/firebase/firebase.config");
 
 async function populate() {
   try {
