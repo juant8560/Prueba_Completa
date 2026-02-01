@@ -80,7 +80,7 @@ async function populate() {
       await db.collection("detalleOrden").add(detalle);
     }
 
-    console.log("Firestore poblado con datos de prueba ✅");
+    console.log("Firestore poblado con datos de prueba");
   } catch (error) {
     console.error("Error poblando Firestore:", error);
   }
