@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getProductos, createProducto, updateProducto, deleteProducto } from "../api/productos.api";
 import ProductoForm from "../components/ProductoForm";
 import Navbar from "../components/Navbar";
@@ -7,18 +7,18 @@ export default function ProductosPage() {
   const [productos, setProductos] = useState([]);
   const [editing, setEditing] = useState(null);
 
-  const loadProductos = async () => {
+  const loadProductos = useCallback(async () => {
     try {
       const res = await getProductos();
       if (res.success) setProductos(res.data);
     } catch (err) {
       alert("Error al cargar productos: " + err.message);
     }
-  };
+  }, []);
 
   useEffect(() => {
     loadProductos();
-  }, []);
+  }, [loadProductos]);
 
   const handleSubmit = async (data) => {
     if (editing) {

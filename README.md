@@ -24,7 +24,7 @@ cd ../order-management-frontend
 npm install
 
 Cómo Ejecutar
-Iniciar Backend: Dentro de order-management-api, ejecuta: npm run dev (Servidor en http://localhost:3000).
+Iniciar Backend: Dentro de order-management-api, ejecuta: node src/server.js (Servidor en http://localhost:3000).
 
 Iniciar Frontend: Dentro de order-management-frontend, ejecuta: npm run dev (App en http://localhost:5173).
 
